@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss App</title>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #1e1e2f, #3a3a6a);
+        /* 0deg → top to bottom , 90deg → left to right , 135deg → diagonal (top-left → bottom-right)
+         👉 So 135deg just controls direction of color flow 👍 */
+        font-family: Arial, sans-serif;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        background: #ff4d8d;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        background: #ff1f6a;
+    }
+
+    h1 {
+        margin-top: 20px;
+        font-size: 40px;
+        color: #ffffff;
+    }
+
+    h3 {
+        font-size: 30px;
+        color: #ffd700;
+    }
+</style>
+</head>
+<body>
+    <button>Toss</button>
+     <h1></h1>
+     <h3></h3>
+    <!--  build a coin toss app where clicking a button randomly shows either 
+      "Head" or "Tail" and displays the result. -->
+</body>
+<script>
+       let btn = document.querySelector("button");
+let headone = document.querySelector("h1");
+let head3 = document.querySelector("h3");
+
+btn.addEventListener("click", () => {
+    let randomNumb = Math.ceil(Math.random() * 2);
+
+    console.log(randomNumb);
+
+    headone.textContent = randomNumb;
+
+    if (randomNumb === 1) {
+        head3.textContent = "Head";
+    } else {
+        head3.textContent = "Tail";
+    }
+});
+</script>
+</html>
